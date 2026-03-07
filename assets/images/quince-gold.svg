@@ -1,0 +1,27 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1200" y2="780"><stop stop-color="#090909"/><stop offset="1" stop-color="#130E08"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F4E2A5"/><stop offset="0.4" stop-color="#C69B48"/><stop offset="1" stop-color="#F2D587"/></linearGradient>
+<radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(600 160) rotate(90) scale(180 480)"><stop stop-color="#F6D882" stop-opacity="0.28"/><stop offset="1" stop-color="#F6D882" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="780" fill="url(#bg)"/>
+<ellipse cx="600" cy="160" rx="460" ry="170" fill="url(#glow)"/>
+<path d="M260 600C350 470 450 410 600 410C750 410 850 470 940 600" stroke="url(#gold)" stroke-width="4"/>
+<path d="M295 600C375 500 465 450 600 450C735 450 825 500 905 600" stroke="url(#gold)" stroke-opacity="0.5" stroke-width="3"/>
+<rect x="460" y="500" width="280" height="130" rx="24" fill="#0E0D0A" stroke="url(#gold)" stroke-width="3"/>
+<circle cx="600" cy="470" r="65" fill="#13110C" stroke="url(#gold)" stroke-width="4"/>
+<path d="M565 455H635M600 420V490" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+<circle cx="600" cy="470" r="16" fill="#CDA04B"/>
+<path d="M510 620C540 650 570 665 600 665C630 665 660 650 690 620" stroke="url(#gold)" stroke-width="3"/>
+<g opacity="0.9">
+<rect x="150" y="545" width="165" height="90" rx="26" fill="#0D0C09" stroke="url(#gold)" stroke-width="3"/>
+<rect x="885" y="545" width="165" height="90" rx="26" fill="#0D0C09" stroke="url(#gold)" stroke-width="3"/>
+<rect x="185" y="505" width="95" height="48" rx="18" fill="#0F0E0A" stroke="url(#gold)" stroke-width="3"/>
+<rect x="920" y="505" width="95" height="48" rx="18" fill="#0F0E0A" stroke="url(#gold)" stroke-width="3"/>
+</g>
+<circle cx="260" cy="200" r="12" fill="#F1D37A"/>
+<circle cx="380" cy="145" r="8" fill="#F1D37A"/>
+<circle cx="940" cy="200" r="12" fill="#F1D37A"/>
+<circle cx="820" cy="145" r="8" fill="#F1D37A"/>
+<text x="70" y="90" fill="#F1D585" font-size="42" font-family="Georgia, serif">XV años y celebraciones</text>
+</svg>
