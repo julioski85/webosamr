@@ -156,6 +156,8 @@ p { margin: 0; line-height: 1.7; color: #534a41; }
     "accent accent";
   gap: .85rem;
   align-items: stretch;
+  width: 100%;
+  max-width: 100%;
 }
 .card {
   border-radius: 24px;
@@ -167,7 +169,7 @@ p { margin: 0; line-height: 1.7; color: #534a41; }
   transition: transform .35s ease, box-shadow .35s ease;
 }
 .card:hover { transform: translateY(-4px); box-shadow: 0 20px 36px rgba(114, 91, 47, 0.18); }
-.card img { width: 100%; height: 100%; object-fit: cover; }
+.card img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .card-main { grid-area: main; min-height: 305px; }
 .hero-collage .card:nth-child(2) { grid-area: sub1; }
 .hero-collage .card:nth-child(3) { grid-area: sub2; }
@@ -296,6 +298,19 @@ p { margin: 0; line-height: 1.7; color: #534a41; }
   background: #dcc9a9;
 }
 .slider-dots .is-active { background: #bc8f4e; transform: scale(1.2); }
+
+@media (min-width: 769px) {
+  .gallery-slider {
+    padding: clamp(1rem, 1.8vw, 1.35rem);
+  }
+  .slider-stage {
+    aspect-ratio: 16 / 10;
+    min-height: clamp(330px, 40vw, 520px);
+  }
+  .slide img {
+    object-fit: cover;
+  }
+}
 
 .testimonials { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.1rem; align-items: stretch; }
 .testimonial-card {
@@ -445,15 +460,28 @@ p { margin: 0; line-height: 1.7; color: #534a41; }
   .hero-points li { font-size: .9rem; line-height: 1.5; }
   .hero-collage {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas:
-      "main main"
-      "sub1 sub2"
-      "accent accent";
-    gap: .62rem;
+    grid-template-areas: none;
+    gap: .7rem;
+    width: 100%;
+    max-width: 100%;
   }
-  .card { border-radius: 18px; min-height: 140px; }
-  .card-main { min-height: 235px; }
+  .card {
+    border-radius: 18px;
+    min-height: 150px;
+    overflow: hidden;
+  }
+  .card-main {
+    grid-area: auto;
+    grid-column: 1 / -1;
+    min-height: 240px;
+  }
+  .hero-collage .card:nth-child(2),
+  .hero-collage .card:nth-child(3) {
+    grid-area: auto;
+    min-height: 165px;
+  }
   .card.accent {
+    grid-column: 1 / -1;
     min-height: 120px;
     border-radius: 18px;
     font-size: clamp(1.08rem, 5vw, 1.24rem);
