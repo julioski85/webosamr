@@ -1,6 +1,6 @@
 const preloader = document.getElementById('preloader');
 window.addEventListener('load', () => {
-  window.setTimeout(() => preloader?.classList.add('hidden'), 900);
+  window.setTimeout(() => preloader?.classList.add('hidden'), 850);
 });
 
 const menuBtn = document.getElementById('menuBtn');
@@ -28,7 +28,10 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.15 });
-revealItems.forEach((item) => observer.observe(item));
+revealItems.forEach((item, index) => {
+  item.style.transitionDelay = `${Math.min(index * 0.04, 0.22)}s`;
+  observer.observe(item);
+});
 
 function initSlider() {
   const slider = document.querySelector('[data-slider]');
