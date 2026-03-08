@@ -446,7 +446,7 @@ p { margin: 0; line-height: 1.7; color: #534a41; }
   .benefits-track article { flex-basis: calc((100% - 1rem) / 2); }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .container { width: min(100%, calc(100% - 1.5rem)); }
   .section { padding: 3.8rem 0; }
   .center { margin-bottom: 1.7rem; }
@@ -476,7 +476,6 @@ p { margin: 0; line-height: 1.7; color: #534a41; }
   .nav a { padding: .6rem .68rem; }
 
   .hero.section { padding-top: 3.2rem; }
-  .hero-grid { gap: 1.5rem; }
   .hero-copy { gap: .62rem; }
   .hero-copy h1 { font-size: clamp(1.9rem, 8.7vw, 2.35rem); line-height: 1.12; }
   .lead { margin: .45rem 0 1rem; font-size: .96rem; line-height: 1.64; }
@@ -484,34 +483,65 @@ p { margin: 0; line-height: 1.7; color: #534a41; }
   .hero-actions .btn { flex: 1 1 100%; min-height: 47px; font-size: .95rem; }
   .hero-points { gap: .55rem; }
   .hero-points li { font-size: .9rem; line-height: 1.5; }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .hero-copy,
   .hero-collage {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas: none;
-    gap: .7rem;
     width: 100%;
     max-width: 100%;
+    min-width: 0;
   }
-  .card {
-    border-radius: 18px;
+
+  .hero-collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+    width: 100%;
+    max-width: 100%;
+    align-items: stretch;
+  }
+
+  .hero-collage .card-main {
+    grid-column: 1 / -1;
+    min-height: 220px;
+  }
+
+  .hero-collage .card:not(.card-main):not(.accent) {
     min-height: 150px;
+  }
+
+  .hero-collage .card.accent {
+    grid-column: 1 / -1;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.1rem;
+  }
+
+  .hero-collage .card {
+    width: 100%;
+    min-width: 0;
     overflow: hidden;
-  }
-  .card-main {
-    grid-area: auto;
-    grid-column: 1 / -1;
-    min-height: 240px;
-  }
-  .hero-collage .card:nth-child(2),
-  .hero-collage .card:nth-child(3) {
-    grid-area: auto;
-    min-height: 165px;
-  }
-  .card.accent {
-    grid-column: 1 / -1;
-    min-height: 120px;
     border-radius: 18px;
-    font-size: clamp(1.08rem, 5vw, 1.24rem);
-    padding: .95rem 1rem;
+  }
+
+  .hero-collage .card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-collage .card.accent p {
+    margin: 0;
+    width: 100%;
+    text-align: center;
   }
 
   .split { gap: 1.1rem; }
