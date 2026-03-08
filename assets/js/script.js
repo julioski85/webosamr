@@ -33,6 +33,47 @@ revealItems.forEach((item, index) => {
   observer.observe(item);
 });
 
+function buildGallery() {
+  const stage = document.querySelector('[data-gallery-stage]');
+  if (!stage) return;
+
+  const assetImages = [
+    '45456365.jpg',
+    'asd.jpg',
+    'asdasd.jpg',
+    'bvbv.jpg',
+    'cvbvbcv.jpg',
+    'cvxvcvx.jpg',
+    'ertergr.jpg',
+    'erwere.jpg',
+    'fgdfg.jpg',
+    'gfgdf.jpg',
+    'gfgdffgfg.jpg',
+    'ghdfh.jpg',
+    'ghfghfg.jpg',
+    'hjghjghj.jpg',
+    'iuiouoi.jpg',
+    'lñklñkl.jpg',
+    'mnmbnm.jpg',
+    'oiouio.jpg',
+    'popopk.jpg',
+    'qwewe.jpg',
+    'sadasd.jpg',
+    'tytyyt.jpg',
+    'uiyui.jpg',
+    'uyiyuiuy.jpg',
+    'ytutyuyt.jpg',
+    'logo.jpg'
+  ];
+
+  const galleryImages = assetImages.filter((image) => image.toLowerCase() !== 'logo.jpg');
+
+  stage.innerHTML = galleryImages.map((image, index) => {
+    const activeClass = index === 0 ? ' is-active' : '';
+    return `<figure class="slide${activeClass}"><img src="assets/images/${image}" alt="Galería de mobiliario para eventos ${index + 1}" loading="lazy" /></figure>`;
+  }).join('');
+}
+
 function initSlider() {
   const slider = document.querySelector('[data-slider]');
   if (!slider) return;
@@ -41,6 +82,8 @@ function initSlider() {
   const dotsWrap = slider.querySelector('[data-dots]');
   const prev = slider.querySelector('[data-prev]');
   const next = slider.querySelector('[data-next]');
+  if (!slides.length) return;
+
   let current = 0;
   let timer;
 
@@ -171,6 +214,7 @@ function initForm() {
   });
 }
 
+buildGallery();
 initSlider();
 initBenefitsCarousel();
 initTestimonials();
